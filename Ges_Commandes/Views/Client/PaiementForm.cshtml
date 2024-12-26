@@ -1,0 +1,27 @@
+@model Ges_Commandes.Models.Paiement
+
+@{
+    ViewData["Title"] = "Paiement de la Commande";
+}
+
+<h2>Enregistrer le Paiement</h2>
+
+<form method="post" action="@Url.Action("EnregistrerPaiement", "Client")">
+    <div class="form-group">
+        <label for="montant">Montant</label>
+        <input type="text" class="form-control" id="montant" name="montant" required />
+    </div>
+    <div class="form-group">
+        <label for="reference">Référence</label>
+        <input type="text" class="form-control" id="reference" name="reference" required />
+    </div>
+    <div class="form-group">
+        <label for="type">Type de paiement</label>
+        <select class="form-control" id="type" name="type" required>
+            <option value="OM">OM</option>
+            <option value="Wave">Wave</option>
+            <option value="Chèque">Chèque</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary mt-3">Enregistrer</button>
+</form>

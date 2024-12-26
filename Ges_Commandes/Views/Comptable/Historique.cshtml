@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Historique des Paiements";
+}
+
+<h2>Historique des Paiements</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Numéro de Paiement</th>
+            <th>Date</th>
+            <th>Montant</th>
+            <th>Référence</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var paiement in Model)
+        {
+            <tr>
+                <td>@paiement.Numero</td>
+                <td>@paiement.Date.ToShortDateString()</td>
+                <td>@paiement.Montant</td>
+                <td>@paiement.Reference</td>
+            </tr>
+        }
+    </tbody>
+</table>

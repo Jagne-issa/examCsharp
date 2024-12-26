@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Mes Commandes";
+}
+
+<h2>Mes Commandes</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Montant</th>
+            <th>État</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var commande in Model)
+        {
+            <tr>
+                <td>@commande.Date.ToShortDateString()</td>
+                <td>@commande.Montant</td>
+                <td>@commande.Etat</td>
+                <td>
+                    <a href="@Url.Action("Details", "Client", new { id = commande.Id })" class="btn btn-info">Voir</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

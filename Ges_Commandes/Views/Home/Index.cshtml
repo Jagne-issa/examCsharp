@@ -1,0 +1,225 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ges_Commandes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Réinitialisation des styles par défaut */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corps de la page */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* En-tête */
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Menu Hamburger */
+        .menu-bar {
+            display: none;
+        }
+
+        .menu-bar a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            font-size: 1.2rem;
+            display: block;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+            gap: 20px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Menu hamburger (visible sur mobile) */
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Styles pour la page d'accueil */
+        .hero {
+            background-color: #fff;
+            padding: 60px 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        /* Produits et autres sections */
+        .produits {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .produit-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .produit-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .produit-card h3 {
+            font-size: 1.5rem;
+            color: #4CAF50;
+        }
+
+        .produit-card p {
+            font-size: 1rem;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* Responsivité */
+        @media (max-width: 768px) {
+            .navbar ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #4CAF50;
+                width: 200px;
+                padding: 20px;
+            }
+
+            .navbar ul li a {
+                padding: 10px;
+                text-align: right;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .navbar ul.show {
+                display: flex;
+            }
+
+            .produits {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="navbar">
+            <h1>Ges_Commandes</h1>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#produits">Produits</a></li>
+                    <li><a href="#historique">Historique</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <span class="hamburger" onclick="toggleMenu()">&#9776;</span>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Section d'Accueil -->
+    <section id="accueil" class="hero">
+        <h2>Bienvenue sur Ges_Commandes</h2>
+        <p>Gérez vos commandes, produits et paiements facilement. Découvrez notre large sélection de produits disponibles.</p>
+    </section>
+
+    <!-- Section Produits -->
+    <section id="produits" class="produits">
+        <div class="produit-card">
+            <img src="https://via.placeholder.com/250" alt="Produit 1">
+            <h3>Produit 1</h3>
+            <p>Description du produit 1</p>
+        </div>
+        <div class="produit-card">
+            <img src="https://via.placeholder.com/250" alt="Produit 2">
+            <h3>Produit 2</h3>
+            <p>Description du produit 2</p>
+        </div>
+        <div class="produit-card">
+            <img src="https://via.placeholder.com/250" alt="Produit 3">
+            <h3>Produit 3</h3>
+            <p>Description du produit 3</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ges_Commandes. Tous droits réservés.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+            var menu = document.getElementById('menu');
+            menu.classList.toggle('show');
+        }
+    </script>
+
+</body>
+</html>
+
+
+
